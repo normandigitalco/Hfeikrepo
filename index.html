@@ -58,17 +58,17 @@
   @media(max-width:480px){section{padding-top:52px;padding-bottom:52px;}}
   section.tint{background:var(--sand);}
   .hero{background:var(--sand);position:relative;overflow:hidden;padding-top:0;padding-bottom:0;}
-  .hero-flex{display:flex;align-items:stretch;min-height:460px;}
-  .hero-copy{flex:0 0 50%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:64px 48px 64px clamp(24px,6vw,80px);text-align:left;}
+  .hero-flex{display:flex;align-items:center;min-height:auto;padding:56px 0;}
+  .hero-copy{flex:0 0 52%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 32px 0 clamp(24px,6vw,80px);text-align:left;}
   .hero-copy .eyebrow{justify-content:flex-start;}
-  .hero-h1{font-size:clamp(46px,6vw,76px);line-height:1.05;margin:14px 0 20px;font-weight:600;text-align:left;letter-spacing:-.01em;}
-  .hero-copy p{font-size:16px;color:var(--taupe-soft);max-width:420px;margin:0 0 30px;text-align:left;}
-  .hero-photo-wrap{position:relative;flex:1;}
-  .hero-photo{width:100%;height:100%;min-height:380px;object-fit:cover;display:block;border-radius:28px 0 0 28px;}
-  .hero-tag{position:absolute;bottom:36px;left:-24px;background:var(--cream);border-radius:12px;padding:16px 24px;box-shadow:0 14px 34px rgba(43,52,56,.16);}
+  .hero-h1{font-size:clamp(38px,4.6vw,60px);line-height:1.1;margin:14px 0 18px;font-weight:600;text-align:left;letter-spacing:-.01em;}
+  .hero-copy p{font-size:16px;color:var(--taupe-soft);max-width:420px;margin:0 0 26px;text-align:left;}
+  .hero-photo-wrap{position:relative;flex:0 0 40%;padding-right:clamp(24px,5vw,64px);}
+  .hero-photo{width:100%;aspect-ratio:4/5;max-height:440px;object-fit:cover;display:block;border-radius:20px;box-shadow:0 20px 44px rgba(43,52,56,.16);}
+  .hero-tag{position:absolute;bottom:-18px;left:clamp(8px,2vw,20px);background:var(--cream);border-radius:12px;padding:14px 20px;box-shadow:0 12px 28px rgba(43,52,56,.14);}
   .hero-tag p{margin:0;}
-  .hero-tag .name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--taupe);}
-  .hero-tag .role{font-size:12px;color:var(--taupe-soft);}
+  .hero-tag .name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--taupe);}
+  .hero-tag .role{font-size:11px;color:var(--taupe-soft);}
 
   .page-bleed{background:var(--sand);overflow:hidden;}
   .bleed-flex{display:flex;align-items:stretch;min-height:440px;}
@@ -85,15 +85,15 @@
     .bleed-photo{height:260px;border-radius:0!important;}
   }
   @media(max-width:860px){
-    .hero-flex{flex-direction:column;min-height:auto;}
-    .hero-copy{flex:none;padding:40px 28px 0;text-align:left;align-items:flex-start;}
+    .hero-flex{flex-direction:column;min-height:auto;padding:32px 0 40px;gap:28px;}
+    .hero-copy{flex:none;padding:0 28px;text-align:left;align-items:flex-start;}
     .hero-copy .eyebrow{justify-content:flex-start;margin-bottom:8px;}
     .hero h1, .hero-copy p{text-align:left;margin-left:0;margin-right:0;}
-    .hero-h1{font-size:clamp(32px,9vw,42px);margin:8px 0 14px;}
-    .hero-copy p{margin-bottom:28px;}
-    .hero-photo{height:380px;min-height:0;border-radius:0;}
-    .hero-photo-wrap{margin-top:36px;}
-    .hero-tag{position:absolute;bottom:auto;top:0;left:28px;transform:translateY(-52%);margin:0;display:inline-block;width:max-content;max-width:calc(100% - 56px);}
+    .hero-h1{font-size:clamp(30px,8vw,38px);margin:6px 0 12px;}
+    .hero-copy p{margin-bottom:22px;}
+    .hero-photo-wrap{padding:0 28px;flex:none;}
+    .hero-photo{aspect-ratio:16/11;max-height:none;border-radius:16px;}
+    .hero-tag{left:44px;bottom:-14px;padding:10px 16px;}
   }
 
   .trust-strip{background:var(--cream);padding-top:36px!important;padding-bottom:36px!important;border-bottom:1px solid var(--sand);}
@@ -320,7 +320,7 @@
     <div class="hero-flex">
       <div class="hero-copy">
         <p class="eyebrow">Hastings, MN &middot; In-person and online</p>
-        <h1 class="hero-h1">A space to notice, <br class="hero-break">and to grow</h1>
+        <h1 class="hero-h1">A Space To Notice, <br class="hero-break">And To Grow</h1>
         <p>Therapy for teens, adults, and families navigating ADHD, life transitions, trauma, and more - with warmth, curiosity, and practical tools for lasting change.</p>
         <a href="/contact" class="btn" data-link>Book a free consultation</a>
       </div>
