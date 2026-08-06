@@ -44,13 +44,16 @@
   .nav-item.open .dropdown{opacity:1;visibility:visible;}
   .dropdown a{display:block;padding:10px 12px;border-radius:8px;font-size:14.5px;color:var(--taupe-soft);}
   @media(hover:hover){.dropdown a:hover{background:var(--sand);color:var(--taupe);}}
-  .menu-toggle{display:none;background:none;border:none;font-size:24px;color:var(--taupe);cursor:pointer;padding:10px;margin:-10px;line-height:1;}
+  .menu-toggle{display:none;background:none;border:none;font-size:30px;color:var(--taupe);cursor:pointer;padding:9px;margin:-9px;line-height:1;position:relative;z-index:210;}
   @media(max-width:820px){
     nav.links{display:none;}
     .menu-toggle{display:block;}
-    nav.links.open{display:flex;flex-direction:column;align-items:flex-start;gap:4px;position:absolute;top:100%;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--sand);padding:12px 28px 20px;}
+    nav.links.open{display:flex;flex-direction:column;align-items:flex-start;gap:6px;position:fixed;top:0;left:0;right:0;bottom:0;height:100dvh;background:var(--cream);border-bottom:none;padding:96px 32px 40px;overflow-y:auto;z-index:200;}
+    nav.links.open a{font-size:19px;padding:10px 0;}
+    nav.links.open .btn{margin-top:16px;font-size:16px;}
     .dropdown{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:none;padding:0 0 0 14px;display:none;}
     .nav-item.open .dropdown{display:block;}
+    body.nav-open{overflow:hidden;}
   }
   main{min-height:60vh;}
   section{padding-top:120px;padding-bottom:120px;}
@@ -1182,6 +1185,10 @@
     }
     window.scrollTo({top:0, left:0, behavior:'instant'});
     document.getElementById('navLinks').classList.remove('open');
+    document.body.classList.remove('nav-open');
+    var toggleBtn = document.getElementById('menuToggle');
+    toggleBtn.innerHTML = '&#9776;';
+    toggleBtn.setAttribute('aria-expanded', 'false');
     closeAllDropdowns();
   }
 
@@ -1212,7 +1219,10 @@
   window.addEventListener('popstate', function(){ render(location.pathname, false); });
 
   document.getElementById('menuToggle').addEventListener('click', function(){
-    document.getElementById('navLinks').classList.toggle('open');
+    var isOpen = document.getElementById('navLinks').classList.toggle('open');
+    document.body.classList.toggle('nav-open', isOpen);
+    this.innerHTML = isOpen ? '&times;' : '&#9776;';
+    this.setAttribute('aria-expanded', isOpen);
   });
 
   document.querySelectorAll('.faq-q').forEach(function(btn){
