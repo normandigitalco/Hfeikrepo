@@ -2140,6 +2140,8 @@
   function updateNavSolid(){
     var solid = !document.body.classList.contains('is-home') || window.scrollY > 40;
     document.body.classList.toggle('nav-solid', solid);
+    var themeColorEl = document.querySelector('meta[name="theme-color"]');
+    if(themeColorEl){ themeColorEl.setAttribute('content', solid ? '#FDFBF7' : '#283A50'); }
   }
   window.addEventListener('scroll', updateNavSolid, {passive:true});
 
