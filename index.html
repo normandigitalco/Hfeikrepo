@@ -48,7 +48,7 @@
     box-shadow:0 12px 30px -8px rgba(40,58,80,.35);}
   @media(hover:hover){.btn:hover:after{transform:translateX(4px);}}
   @media(hover:hover){.btn:hover{background:var(--slate-dark);}}
-  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,251,247,.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(40,58,80,.22);box-shadow:0 2px 16px rgba(40,58,80,.05);transition:background-color .7s ease, border-color .7s ease, box-shadow .7s ease, color .7s ease, backdrop-filter .7s ease;}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(243,236,228,.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(40,58,80,.22);box-shadow:0 2px 16px rgba(40,58,80,.05);transition:background-color .7s ease, border-color .7s ease, box-shadow .7s ease, color .7s ease, backdrop-filter .7s ease;}
   body{padding-top:var(--header-h,88px);}
   /* Home page only: header rides transparent over the full-bleed hero photo until the user scrolls */
   body.is-home{padding-top:0;}
@@ -2141,7 +2141,7 @@
     var solid = !document.body.classList.contains('is-home') || window.scrollY > 40;
     document.body.classList.toggle('nav-solid', solid);
     var themeColorEl = document.querySelector('meta[name="theme-color"]');
-    if(themeColorEl){ themeColorEl.setAttribute('content', solid ? '#FDFBF7' : '#283A50'); }
+    if(themeColorEl){ themeColorEl.setAttribute('content', solid ? '#F3ECE4' : '#283A50'); }
   }
   window.addEventListener('scroll', updateNavSolid, {passive:true});
 
